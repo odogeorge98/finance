@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
@@ -53,10 +53,10 @@ export const Header: React.FC = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
     };
-    
+
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // Initial check
-    
+
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
         setIsMobileMenuOpen(false);
       }
     };
-    
+
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [isMobileMenuOpen]);
@@ -137,7 +137,7 @@ export const Header: React.FC = () => {
   const handleNavigate = (to: string, label: string) => {
     setActiveItem(label);
     setIsMobileMenuOpen(false);
-    
+
     // Handle hash links
     if (to.startsWith('#')) {
       const id = to.slice(1);
@@ -165,37 +165,37 @@ export const Header: React.FC = () => {
     <>
       <header
         ref={headerRef}
-        className={`header ${isScrolled ? 'header--scrolled' : ''} ${isMobileMenuOpen ? 'header--mobile-open' : ''}`}
-        data-testid="header"
+        className={`finhdr ${isScrolled ? 'finhdr--scrolled' : ''} ${isMobileMenuOpen ? 'finhdr--mobile-open' : ''}`}
+        data-testid="finhdr"
       >
-        <div className="header__container">
+        <div className="finhdr__container">
           {/* Logo */}
           <div
-            className="header__logo"
+            className="finhdr__logo"
             onClick={handleLogoClick}
             role="button"
             tabIndex={0}
             onKeyDown={(e) => e.key === 'Enter' && handleLogoClick()}
             aria-label="Go to homepage"
           >
-            <span className="header__logo-text">FINANCE</span>
-            <span className="header__logo-dot"> </span>
+            <span className="finhdr__logo-text">FINANCE</span>
+            <span className="finhdr__logo-dot"> </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav 
-            className="header__desktop-nav" 
+          <nav
+            className="finhdr__desktop-nav"
             aria-label="Main navigation"
             style={{ display: isMobile ? 'none' : 'flex' }}
           >
-            <ul className="header__desktop-nav-list">
+            <ul className="finhdr__desktop-nav-list">
               {navItems.map((item) => (
-                <li key={item.label} className="header__desktop-nav-item">
+                <li key={item.label} className="finhdr__desktop-nav-item">
                   <NavLink
                     to={item.to}
                     end={item.to === '/'}
                     className={({ isActive }) =>
-                      `header__desktop-nav-link ${isActive || activeItem === item.label ? 'header__desktop-nav-link--active' : ''}`
+                      `finhdr__desktop-nav-link ${isActive || activeItem === item.label ? 'finhdr__desktop-nav-link--active' : ''}`
                     }
                     onClick={(e) => {
                       e.preventDefault();
@@ -203,11 +203,11 @@ export const Header: React.FC = () => {
                     }}
                     aria-current={activeItem === item.label ? 'page' : undefined}
                   >
-                    <span className="header__desktop-nav-icon" aria-hidden>
+                    <span className="finhdr__desktop-nav-icon" aria-hidden>
                       {item.icon}
                     </span>
-                    <span className="header__desktop-nav-label">{item.label}</span>
-                    <div className="header__desktop-nav-hover-line" />
+                    <span className="finhdr__desktop-nav-label">{item.label}</span>
+                    <div className="finhdr__desktop-nav-hover-line" />
                   </NavLink>
                 </li>
               ))}
@@ -216,49 +216,49 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={`header__menu-toggle ${isMobileMenuOpen ? 'header__menu-toggle--open' : ''}`}
+            className={`finhdr__menu-toggle ${isMobileMenuOpen ? 'finhdr__menu-toggle--open' : ''}`}
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
             style={{ display: isMobile ? 'flex' : 'none' }}
           >
-            <span className="header__menu-icon" />
+            <span className="finhdr__menu-icon" />
           </button>
 
           {/* Mobile Navigation */}
           <div
             ref={mobileNavRef}
-            className={`header__mobile-nav ${isMobileMenuOpen ? 'header__mobile-nav--open' : ''} ${isLoading ? 'header__mobile-nav--loading' : ''}`}
+            className={`finhdr__mobile-nav ${isMobileMenuOpen ? 'finhdr__mobile-nav--open' : ''} ${isLoading ? 'finhdr__mobile-nav--loading' : ''}`}
             id="mobile-navigation"
             aria-label="Mobile navigation"
             aria-hidden={!isMobileMenuOpen}
             style={{ display: isMobile ? 'block' : 'none' }}
           >
-            <div className="header__mobile-nav-wrapper">
-              <ul className="header__mobile-nav-list">
+            <div className="finhdr__mobile-nav-wrapper">
+              <ul className="finhdr__mobile-nav-list">
                 {navItems.map((item) => (
-                  <li key={item.label} className="header__mobile-nav-item">
+                  <li key={item.label} className="finhdr__mobile-nav-item">
                     <button
-                      className={`header__mobile-nav-link ${activeItem === item.label ? 'header__mobile-nav-link--active' : ''}`}
+                      className={`finhdr__mobile-nav-link ${activeItem === item.label ? 'finhdr__mobile-nav-link--active' : ''}`}
                       onClick={() => handleNavigate(item.to, item.label)}
                       aria-current={activeItem === item.label ? 'page' : undefined}
                     >
-                      <span className="header__mobile-nav-icon" aria-hidden>
+                      <span className="finhdr__mobile-nav-icon" aria-hidden>
                         {item.icon}
                       </span>
-                      <span className="header__mobile-nav-label">{item.label}</span>
+                      <span className="finhdr__mobile-nav-label">{item.label}</span>
                     </button>
                   </li>
                 ))}
               </ul>
 
               {/* Mobile Footer */}
-              <div className="header__mobile-footer">
+              <div className="finhdr__mobile-footer">
                 <small>
                   Powered by Advanced AI • Real-time Analytics
                 </small>
-                <div className="header__mobile-icons">
+                <div className="finhdr__mobile-icons">
                   <FaRocket />
                   <HiOutlineLightningBolt />
                   <HiOutlineChip />
@@ -273,7 +273,7 @@ export const Header: React.FC = () => {
       {/* Mobile Overlay */}
       <div
         ref={overlayRef}
-        className={`header__mobile-overlay ${isMobileMenuOpen ? 'header__mobile-overlay--open' : ''}`}
+        className={`finhdr__mobile-overlay ${isMobileMenuOpen ? 'finhdr__mobile-overlay--open' : ''}`}
         onClick={() => setIsMobileMenuOpen(false)}
         onKeyDown={(e) => e.key === 'Enter' && setIsMobileMenuOpen(false)}
         role="button"
