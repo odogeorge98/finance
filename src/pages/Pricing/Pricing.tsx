@@ -24,7 +24,7 @@ import {
   BsShieldCheck
 } from 'react-icons/bs';
 
-import { AiOutlineRocket, AiOutlineLineChart } from 'react-icons/ai';
+import { AiOutlineRocket } from 'react-icons/ai';
 
 
 type PricingPlan = {

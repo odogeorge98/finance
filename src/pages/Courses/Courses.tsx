@@ -1,6 +1,5 @@
 // src/pages/Courses/Courses.tsx
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import './Courses.css';
 
 // React Icons

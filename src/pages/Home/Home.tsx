@@ -320,7 +320,7 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="hero__stats-mobile animate-on-scroll">
-              {statsData.map((stat, index) => (
+              {statsData.map((stat) => (
                 <div key={stat.label} className="hero__stat-mobile">
                   <StatsCounter
                     endValue={stat.value}
