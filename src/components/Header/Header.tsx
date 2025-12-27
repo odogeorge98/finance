@@ -7,8 +7,6 @@ import './Header.css';
 import {
   FaHome,
   FaBookOpen,
-  FaStar,
-  FaCreditCard,
   FaInfoCircle,
   FaEnvelope,
   FaRocket,

@@ -11,21 +11,9 @@ import {
   FaChevronRight,
   FaCrown,
   FaUser,
-  FaUsers,
   FaBuilding,
   FaRocket,
-  FaShieldAlt,
-  FaChartLine,
-  FaHandshake,
-  FaGlobe,
-  FaSyncAlt,
-  FaMobileAlt,
-  FaBookOpen,
-  FaGraduationCap,
-  FaCertificate,
-  FaClock,
   FaQuestionCircle,
-  FaStar,
   FaFire,
   FaPiggyBank,
   FaGift,
@@ -33,13 +21,11 @@ import {
 } from 'react-icons/fa';
 import {
   BsCheckCircle,
-  BsShieldCheck,
-  BsLightning,
-  BsGraphUp
+  BsShieldCheck
 } from 'react-icons/bs';
-import { MdOutlineWorkspacePremium, MdSupportAgent } from 'react-icons/md';
+
 import { AiOutlineRocket, AiOutlineLineChart } from 'react-icons/ai';
-import { TbTargetArrow } from 'react-icons/tb';
+
 
 type PricingPlan = {
   id: string;
@@ -68,7 +54,7 @@ type FAQ = {
 export const Pricing: React.FC = () => {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('yearly');
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
-  const [selectedPlan, setSelectedPlan] = useState<string>('premium');
+
 
   const pricingPlans: PricingPlan[] = [
     {

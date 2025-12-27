@@ -13,34 +13,25 @@ import {
     FaChartLine,
     FaGlobe,
     FaStar,
-    FaHeart,
     FaQuoteLeft,
     FaQuoteRight,
-    FaAward,
     FaLightbulb,
     FaCrown,
     FaGem,
     FaBolt,
-    FaMoneyBillWave,
     FaChartBar,
     FaUniversity,
     FaUserTie,
     FaGraduationCap,
     FaShieldAlt,
-    FaLock,
-    FaSeedling,
-    FaRibbon,
-    FaHandshake
+    FaLock
 } from 'react-icons/fa';
 import {
-    BsGraphUp,
-    BsShieldCheck,
     BsLightning,
-    BsCameraVideo
 } from 'react-icons/bs';
-import { MdAutoGraph, MdGroups, MdAttachMoney } from 'react-icons/md';
-import { GiCircuitry, GiArtificialIntelligence, GiTakeMyMoney } from 'react-icons/gi';
-import { IoAnalytics, IoRocketSharp } from 'react-icons/io5';
+import { MdAttachMoney } from 'react-icons/md';
+import { GiArtificialIntelligence, GiTakeMyMoney } from 'react-icons/gi';
+import { IoRocketSharp } from 'react-icons/io5';
 
 export const About: React.FC = () => {
     const [activeYear, setActiveYear] = useState<number>(2023);

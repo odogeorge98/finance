@@ -5,7 +5,6 @@ import './Courses.css';
 
 // React Icons
 import {
-  FaPlay,
   FaClock,
   FaUser,
   FaStar,
@@ -15,7 +14,6 @@ import {
   FaChevronRight,
   FaFire,
   FaGraduationCap,
-  FaCertificate,
   FaUsers,
   FaSearch,
   FaLayerGroup,
@@ -29,11 +27,9 @@ import {
   BsGraphUp,
   BsCurrencyExchange,
   BsPlayCircle,
-  BsFillLightningFill
 } from 'react-icons/bs';
 import { GiTakeMyMoney, GiMoneyStack, GiCircuitry, GiCash, GiGoldBar } from 'react-icons/gi';
 import { IoDiamond } from 'react-icons/io5';
-import { SiBitcoincash } from 'react-icons/si';
 
 export const Courses: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');

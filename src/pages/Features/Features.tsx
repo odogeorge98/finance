@@ -1,6 +1,5 @@
 // src/pages/Features/Features.tsx
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import './Features.css';
 
 // React Icons Imports
@@ -11,38 +10,24 @@ import {
   FaPlay,
   FaCheck,
   FaChevronRight,
-  FaUsers,
   FaChartLine,
-  FaShieldAlt,
   FaCloud,
   FaMobileAlt,
   FaBrain,
-  FaSync,
   FaGlobe,
-  FaLightbulb,
   FaCrown,
-  FaStar,
-  FaMagic,
   FaBolt,
   FaGem,
  
-  FaWaveSquare,
-  FaCube
 } from 'react-icons/fa';
-import {
-  BsGraphUp,
-  BsShieldCheck,
-  BsLightning,
-  BsCameraVideo
-} from 'react-icons/bs';
-import { MdAutoGraph, MdSpeed } from 'react-icons/md';
-import { GiCircuitry, GiArtificialIntelligence } from 'react-icons/gi';
+
+import { MdSpeed } from 'react-icons/md';
+import { GiArtificialIntelligence } from 'react-icons/gi';
 import { IoAnalytics, IoVideocam } from 'react-icons/io5';
 
 export const Features: React.FC = () => {
   const [activeFeature, setActiveFeature] = useState<number>(1);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const featuresRef = useRef<HTMLDivElement>(null);
 
   const features = [
     {

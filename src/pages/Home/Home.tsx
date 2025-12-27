@@ -22,8 +22,6 @@ import {
   FaStar,
   FaRegStar,
   FaChartLine,
-  FaMoneyBillWave,
-  FaCoins,
   FaHome,
   FaPiggyBank,
   FaCheck,

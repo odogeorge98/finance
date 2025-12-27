@@ -15,7 +15,6 @@ import {
   FaCommentDots,
   FaCheckCircle,
   FaHeadset,
-  FaRocket,
   FaChevronRight,
   FaLinkedin,
   FaTwitter,
@@ -27,7 +26,6 @@ import {
 } from 'react-icons/fa';
 import {
   BsShieldCheck,
-  BsLightning,
   BsChatDots
 } from 'react-icons/bs';
 import { 

@@ -9,8 +9,6 @@ import {
   FaStar,
   FaQuoteLeft,
   FaQuoteRight,
-  FaUsers,
-  FaGraduationCap,
   FaHeart,
   FaRocket,
   FaChevronRight,
